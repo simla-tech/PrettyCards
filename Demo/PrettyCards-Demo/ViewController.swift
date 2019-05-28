@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     func openGithubPage(){
         self.button.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
-            guard let url = URL(string: "https://gtthub.com/ilia3546/PrettyCards") else { return }
+            guard let url = URL(string: "https://github.com/ilia3546/PrettyCards") else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: { _ in
                 self.button.stopAnimating()
             })
