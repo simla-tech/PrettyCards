@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F30E322B229D5E8500A60A11 /* Cards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30E3221229D5E8400A60A11 /* Cards.framework */; };
-		F30E3230229D5E8500A60A11 /* CardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E322F229D5E8500A60A11 /* CardsTests.swift */; };
-		F30E3232229D5E8500A60A11 /* Cards.h in Headers */ = {isa = PBXBuildFile; fileRef = F30E3224229D5E8400A60A11 /* Cards.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F30CEA60229D71BC007A7633 /* PrettyCards.h in Headers */ = {isa = PBXBuildFile; fileRef = F30CEA5F229D71BC007A7633 /* PrettyCards.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F30CEA65229D7212007A7633 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30CEA62229D7212007A7633 /* Tests.swift */; };
+		F30E322B229D5E8500A60A11 /* PrettyCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30E3221229D5E8400A60A11 /* PrettyCards.framework */; };
+		F30E3240229D5EEC00A60A11 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323C229D5EEC00A60A11 /* Animation.swift */; };
+		F30E3241229D5EEC00A60A11 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323D229D5EEC00A60A11 /* Card.swift */; };
+		F30E3242229D5EEC00A60A11 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */; };
+		F30E3243229D5EEC00A60A11 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323F229D5EEC00A60A11 /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +27,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F30E3221229D5E8400A60A11 /* Cards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F30E3224229D5E8400A60A11 /* Cards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		F30CEA5F229D71BC007A7633 /* PrettyCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyCards.h; sourceTree = "<group>"; };
+		F30CEA62229D7212007A7633 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		F30CEA63229D7212007A7633 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30E3221229D5E8400A60A11 /* PrettyCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrettyCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30E3225229D5E8400A60A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F30E322A229D5E8500A60A11 /* CardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F30E322F229D5E8500A60A11 /* CardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTests.swift; sourceTree = "<group>"; };
-		F30E3231229D5E8500A60A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30E322A229D5E8500A60A11 /* PrettyCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrettyCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30E323C229D5EEC00A60A11 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		F30E323D229D5EEC00A60A11 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F30E323F229D5EEC00A60A11 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +51,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F30E322B229D5E8500A60A11 /* Cards.framework in Frameworks */,
+				F30E322B229D5E8500A60A11 /* PrettyCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F30CEA61229D7212007A7633 /* PrettyCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F30CEA62229D7212007A7633 /* Tests.swift */,
+				F30CEA63229D7212007A7633 /* Info.plist */,
+			);
+			path = PrettyCardsTests;
+			sourceTree = "<group>";
+		};
 		F30E3217229D5E8400A60A11 = {
 			isa = PBXGroup;
 			children = (
-				F30E3223229D5E8400A60A11 /* Cards */,
-				F30E322E229D5E8500A60A11 /* CardsTests */,
+				F30E323B229D5EEC00A60A11 /* Source */,
+				F30CEA61229D7212007A7633 /* PrettyCardsTests */,
 				F30E3222229D5E8400A60A11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,28 +79,23 @@
 		F30E3222229D5E8400A60A11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F30E3221229D5E8400A60A11 /* Cards.framework */,
-				F30E322A229D5E8500A60A11 /* CardsTests.xctest */,
+				F30E3221229D5E8400A60A11 /* PrettyCards.framework */,
+				F30E322A229D5E8500A60A11 /* PrettyCardsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F30E3223229D5E8400A60A11 /* Cards */ = {
+		F30E323B229D5EEC00A60A11 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F30E3224229D5E8400A60A11 /* Cards.h */,
+				F30CEA5F229D71BC007A7633 /* PrettyCards.h */,
 				F30E3225229D5E8400A60A11 /* Info.plist */,
+				F30E323C229D5EEC00A60A11 /* Animation.swift */,
+				F30E323D229D5EEC00A60A11 /* Card.swift */,
+				F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */,
+				F30E323F229D5EEC00A60A11 /* Shadow.swift */,
 			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
-		F30E322E229D5E8500A60A11 /* CardsTests */ = {
-			isa = PBXGroup;
-			children = (
-				F30E322F229D5E8500A60A11 /* CardsTests.swift */,
-				F30E3231229D5E8500A60A11 /* Info.plist */,
-			);
-			path = CardsTests;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,16 +105,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F30E3232229D5E8500A60A11 /* Cards.h in Headers */,
+				F30CEA60229D71BC007A7633 /* PrettyCards.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F30E3220229D5E8400A60A11 /* Cards */ = {
+		F30E3220229D5E8400A60A11 /* PrettyCards */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F30E3235229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "Cards" */;
+			buildConfigurationList = F30E3235229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "PrettyCards" */;
 			buildPhases = (
 				F30E321C229D5E8400A60A11 /* Headers */,
 				F30E321D229D5E8400A60A11 /* Sources */,
@@ -113,14 +125,14 @@
 			);
 			dependencies = (
 			);
-			name = Cards;
+			name = PrettyCards;
 			productName = Cards;
-			productReference = F30E3221229D5E8400A60A11 /* Cards.framework */;
+			productReference = F30E3221229D5E8400A60A11 /* PrettyCards.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F30E3229229D5E8500A60A11 /* CardsTests */ = {
+		F30E3229229D5E8500A60A11 /* PrettyCardsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F30E3238229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "CardsTests" */;
+			buildConfigurationList = F30E3238229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "PrettyCardsTests" */;
 			buildPhases = (
 				F30E3226229D5E8500A60A11 /* Sources */,
 				F30E3227229D5E8500A60A11 /* Frameworks */,
@@ -131,9 +143,9 @@
 			dependencies = (
 				F30E322D229D5E8500A60A11 /* PBXTargetDependency */,
 			);
-			name = CardsTests;
+			name = PrettyCardsTests;
 			productName = CardsTests;
-			productReference = F30E322A229D5E8500A60A11 /* CardsTests.xctest */;
+			productReference = F30E322A229D5E8500A60A11 /* PrettyCardsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F30E321B229D5E8400A60A11 /* Build configuration list for PBXProject "Cards" */;
+			buildConfigurationList = F30E321B229D5E8400A60A11 /* Build configuration list for PBXProject "PrettyCards" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -166,8 +178,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F30E3220229D5E8400A60A11 /* Cards */,
-				F30E3229229D5E8500A60A11 /* CardsTests */,
+				F30E3220229D5E8400A60A11 /* PrettyCards */,
+				F30E3229229D5E8500A60A11 /* PrettyCardsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30E3240229D5EEC00A60A11 /* Animation.swift in Sources */,
+				F30E3243229D5EEC00A60A11 /* Shadow.swift in Sources */,
+				F30E3242229D5EEC00A60A11 /* ActivityIndicator.swift in Sources */,
+				F30E3241229D5EEC00A60A11 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F30E3230229D5E8500A60A11 /* CardsTests.swift in Sources */,
+				F30CEA65229D7212007A7633 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +226,7 @@
 /* Begin PBXTargetDependency section */
 		F30E322D229D5E8500A60A11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F30E3220229D5E8400A60A11 /* Cards */;
+			target = F30E3220229D5E8400A60A11 /* PrettyCards */;
 			targetProxy = F30E322C229D5E8500A60A11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -348,14 +364,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.Cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.PrettyCards;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -373,14 +390,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.Cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.PrettyCards;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -391,15 +409,16 @@
 		F30E3239229D5E8500A60A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H93M692V93;
-				INFOPLIST_FILE = CardsTests/Info.plist;
+				INFOPLIST_FILE = PrettyCardsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.CardsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.PrettyCardsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,15 +428,16 @@
 		F30E323A229D5E8500A60A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H93M692V93;
-				INFOPLIST_FILE = CardsTests/Info.plist;
+				INFOPLIST_FILE = PrettyCardsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.CardsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetech.PrettyCardsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,7 +447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F30E321B229D5E8400A60A11 /* Build configuration list for PBXProject "Cards" */ = {
+		F30E321B229D5E8400A60A11 /* Build configuration list for PBXProject "PrettyCards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30E3233229D5E8500A60A11 /* Debug */,
@@ -436,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F30E3235229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "Cards" */ = {
+		F30E3235229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "PrettyCards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30E3236229D5E8500A60A11 /* Debug */,
@@ -445,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F30E3238229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "CardsTests" */ = {
+		F30E3238229D5E8500A60A11 /* Build configuration list for PBXNativeTarget "PrettyCardsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30E3239229D5E8500A60A11 /* Debug */,

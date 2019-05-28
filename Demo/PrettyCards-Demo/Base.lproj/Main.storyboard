@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PrettyCards_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHr-rD-eVy" customClass="Card" customModule="PrettyCards">
+                                <rect key="frame" x="47" y="108" width="320" height="320"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImage" translatesAutoresizingMaskIntoConstraints="NO" id="ycD-Oy-mKA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pretty Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-dp-dBd">
+                                        <rect key="frame" x="16" y="37" width="288" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEATURED LIBRARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEM-lc-txL">
+                                        <rect key="frame" x="16" y="16" width="288" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome view for awesome apps" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQC-d1-CJw">
+                                        <rect key="frame" x="16" y="283.66666666666669" width="288" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kQC-d1-CJw" secondAttribute="trailing" constant="16" id="876-f4-LjU"/>
+                                    <constraint firstAttribute="trailing" secondItem="pH4-dp-dBd" secondAttribute="trailing" constant="16" id="8nu-CU-OQY"/>
+                                    <constraint firstItem="gEM-lc-txL" firstAttribute="top" secondItem="pHr-rD-eVy" secondAttribute="top" constant="16" id="CoD-yV-36y"/>
+                                    <constraint firstItem="pH4-dp-dBd" firstAttribute="top" secondItem="gEM-lc-txL" secondAttribute="bottom" constant="4" id="DjW-zr-amP"/>
+                                    <constraint firstAttribute="bottom" secondItem="kQC-d1-CJw" secondAttribute="bottom" constant="16" id="I3v-8g-9Nf"/>
+                                    <constraint firstItem="ycD-Oy-mKA" firstAttribute="leading" secondItem="pHr-rD-eVy" secondAttribute="leading" id="PSD-0a-smi"/>
+                                    <constraint firstAttribute="width" secondItem="pHr-rD-eVy" secondAttribute="height" id="Utf-cE-BUn"/>
+                                    <constraint firstItem="ycD-Oy-mKA" firstAttribute="top" secondItem="pHr-rD-eVy" secondAttribute="top" id="V1r-ZJ-46C"/>
+                                    <constraint firstItem="pH4-dp-dBd" firstAttribute="leading" secondItem="pHr-rD-eVy" secondAttribute="leading" constant="16" id="dfH-5a-ueq"/>
+                                    <constraint firstAttribute="bottom" secondItem="ycD-Oy-mKA" secondAttribute="bottom" id="f8E-U7-bcn"/>
+                                    <constraint firstItem="gEM-lc-txL" firstAttribute="leading" secondItem="pHr-rD-eVy" secondAttribute="leading" constant="16" id="gGD-Jk-XcY"/>
+                                    <constraint firstAttribute="trailing" secondItem="gEM-lc-txL" secondAttribute="trailing" constant="16" id="iar-KI-nwa"/>
+                                    <constraint firstItem="kQC-d1-CJw" firstAttribute="leading" secondItem="pHr-rD-eVy" secondAttribute="leading" constant="16" id="rpR-cX-hyz"/>
+                                    <constraint firstAttribute="trailing" secondItem="ycD-Oy-mKA" secondAttribute="trailing" id="wQA-Pc-fkN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ3-6s-68F" customClass="Card" customModule="PrettyCards">
+                                <rect key="frame" x="82" y="741" width="250" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put a star on the GitHub" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAc-vf-cmI">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.35686274509803922" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1AC-pm-brt"/>
+                                    <constraint firstAttribute="bottom" secondItem="AAc-vf-cmI" secondAttribute="bottom" id="GmG-ie-xGf"/>
+                                    <constraint firstAttribute="height" constant="57" id="KRs-XI-Dic"/>
+                                    <constraint firstAttribute="trailing" secondItem="AAc-vf-cmI" secondAttribute="trailing" id="dkR-zz-aQi"/>
+                                    <constraint firstItem="AAc-vf-cmI" firstAttribute="leading" secondItem="kJ3-6s-68F" secondAttribute="leading" id="g8G-Rq-FFY"/>
+                                    <constraint firstItem="AAc-vf-cmI" firstAttribute="top" secondItem="kJ3-6s-68F" secondAttribute="top" id="q8N-2K-gSM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kJ3-6s-68F" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pHr-rD-eVy" secondAttribute="bottom" constant="32" id="Bad-UM-nVY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kJ3-6s-68F" secondAttribute="trailing" constant="32" id="ByW-oJ-KBh"/>
+                            <constraint firstItem="pHr-rD-eVy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLp-J6-OuZ"/>
+                            <constraint firstItem="kJ3-6s-68F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dde-DB-7vb"/>
+                            <constraint firstItem="pHr-rD-eVy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Eva-3h-cBg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pHr-rD-eVy" secondAttribute="trailing" constant="32" id="HsI-fJ-8gr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kJ3-6s-68F" secondAttribute="bottom" constant="64" id="aGy-Tv-sGq"/>
+                            <constraint firstItem="kJ3-6s-68F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="jyk-Mq-hGE"/>
+                            <constraint firstItem="pHr-rD-eVy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="q5j-Nd-DM4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="kJ3-6s-68F" id="sqn-al-0IS"/>
+                        <outlet property="topCard" destination="pHr-rD-eVy" id="vZb-JF-8W5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MainImage" width="320" height="320"/>
+    </resources>
+</document>
