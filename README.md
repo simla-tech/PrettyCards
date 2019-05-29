@@ -1,27 +1,14 @@
-<div style="display: flex;align-items: center;flex-wrap: wrap;justify-content:center;">
+<p align="center">
 
-	<div>
-		<img src="./Images/logo.png" alt="Graphus" title="Graphus" width="350" />
-	</div>
-	
-	<div style="max-width: 300px;margin-top:-10px;">
-	
-			<div style="font-size: 1.2em; color: #4A4A4A;line-height: 1.4em;margin-bottom: 12px">
-				Awesome animated view like iOS 11 AppStore card
-			</div>
-			
-			<p>
-				<a href="https://travis-ci.org/ilia3546/PrettyCards"><img src="https://travis-ci.com/ilia3546/PrettyCards.svg?branch=master"></a>
-				<a href="https://github.com/Carthage/Carthage/"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
-				<a href="http://onevcat.github.io/PrettyCards/"><img src="https://img.shields.io/cocoapods/v/PrettyCards.svg?style=flat"></a>
-				<a href="https://raw.githubusercontent.com/ilia3546/PrettyCards/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/PrettyCards.svg?style=flat"></a>
-				<a href="http://onevcat.github.io/PrettyCards/"><img src="https://img.shields.io/cocoapods/p/PrettyCards.svg?style=flat"></a>
-			</p>
-	
-	</div>
+</p>
 
-</div>
-
+<p align="center">
+<a href="https://travis-ci.org/ilia3546/PrettyCards"><img src="https://travis-ci.com/ilia3546/PrettyCards.svg?branch=0.1.6"></a>
+<a href="https://github.com/Carthage/Carthage/"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="http://onevcat.github.io/PrettyCards/"><img src="https://img.shields.io/cocoapods/v/PrettyCards.svg?style=flat"></a>
+<a href="https://raw.githubusercontent.com/ilia3546/PrettyCards/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/PrettyCards.svg?style=flat"></a>
+<a href="http://onevcat.github.io/PrettyCards/"><img src="https://img.shields.io/cocoapods/p/PrettyCards.svg?style=flat"></a>
+</p>
 
 PrettyCards is a powerfull tool for creating views like iOS 11 appstore cards or buttons. If you like the project, do not forget to put **star ★**
 
