@@ -9,7 +9,7 @@
 import UIKit
 
 /// Card view
-public class Card: UIView, UIGestureRecognizerDelegate {
+open class Card: UIView, UIGestureRecognizerDelegate {
     
     public typealias TapHandler = () -> Void
     
@@ -83,7 +83,7 @@ public class Card: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    public override var backgroundColor: UIColor? {
+    open override var backgroundColor: UIColor? {
         set {
             super.backgroundColor = newValue
             self.activityIndicatorContainer.backgroundColor = newValue
@@ -123,12 +123,12 @@ public class Card: UIView, UIGestureRecognizerDelegate {
     
     // MARK: - Overriding
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configure()
     }
@@ -201,17 +201,17 @@ public class Card: UIView, UIGestureRecognizerDelegate {
     
     // MARK: - Animations
     
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let animation = self.animation else { return }
         self.isTouched = true
         animation.animationBlock(self, false)
     }
     
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resetAnimation(handler: self.tapHandler)
     }
     
-    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resetAnimation(handler: nil)
     }
     
