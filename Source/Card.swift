@@ -16,10 +16,10 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     // MARK: - Variables
     
     /// Type of animation when tap
-    public var animation: Animation?
+    open var animation: Animation?
     
     /// The blur radius (in points) used to render the Card’s shadow. Animatable.
-    public var shadowRadius: CGFloat {
+    open var shadowRadius: CGFloat {
         set {
             self.layer.shadowRadius = newValue
         }
@@ -29,7 +29,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     }
     
     /// The color of the Card’s shadow. Animatable.
-    public var shadowColor: UIColor? {
+    open var shadowColor: UIColor? {
         set {
             self.layer.shadowColor = newValue?.cgColor
         }
@@ -42,7 +42,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     }
     
     /// The offset (in points) of the Card’s shadow. Animatable.
-    public var shadowOffset: CGSize {
+    open var shadowOffset: CGSize {
         set {
             self.layer.shadowOffset = newValue
         }
@@ -52,7 +52,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     }
     
     /// The opacity of the Card’s shadow. Animatable.
-    public var shadowOpacity: Float {
+    open var shadowOpacity: Float {
         set {
             self.layer.shadowOpacity = newValue
         }
@@ -62,7 +62,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     }
     
     /// The radius to use when drawing rounded corners for the layer’s background.
-    public var cornerRadius: CGFloat {
+    open var cornerRadius: CGFloat {
         set{
             self.layer.cornerRadius = newValue
             self.containerView.layer.cornerRadius = newValue
@@ -232,7 +232,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     // MARK: - Activity indicator
     
-    public func startAnimating(){
+    open func startAnimating(){
         self.isUserInteractionEnabled = false
         self.activityIndicator.startAnimating()
         self.containerView.bringSubviewToFront(self.activityIndicatorContainer)
@@ -241,7 +241,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         })
     }
     
-    public func stopAnimating(){
+    open func stopAnimating(){
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.activityIndicatorContainer.alpha = 0
         }) { (finished) in

@@ -19,31 +19,33 @@ extension Card {
     
     public enum Shadow: CardShadowProtocol {
         
+        @available(*, unavailable, message: "Use .large instead")
         case huge
         case large
         case medium
         case small
         
         public var opacity: Float {
-            switch self {
-            case .huge: return 0.1
-            case .large: return 0.2
-            case .medium: return 0.15
-            case .small: return 0.2
-            }
+            return 0.16
         }
         
         public var radius: CGFloat {
             switch self {
-            case .huge: return 40
-            case .large: return 16
-            case .medium: return 12
-            case .small: return 8
+            case .large: return 32
+            case .medium: return 16
+            case .small: return 2
             }
         }
         
         public var offset: CGSize {
-            return .zero
+            switch self {
+            case .small:
+                return .init(width: 0, height: 2)
+            case .medium:
+                return .init(width: 0, height: 8)
+            case .large:
+                return .init(width: 0, height: 16)
+            }
         }
         
         public var color: UIColor? {
@@ -60,6 +62,13 @@ extension Card {
     }
     
     public func setShadow<T: CardShadowProtocol>(_ shadow: T){
+        self.shadowColor = shadow.color
+        self.shadowOffset = shadow.offset
+        self.shadowRadius = shadow.radius
+        self.shadowOpacity = shadow.opacity
+    }
+    
+    public func setShadow(_ shadow: CardShadowProtocol){
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
