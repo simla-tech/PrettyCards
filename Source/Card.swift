@@ -238,12 +238,14 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         self.containerView.bringSubviewToFront(self.activityIndicatorContainer)
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.activityIndicatorContainer.alpha = 1
+            self.activityIndicator.alpha = 1
         })
     }
     
     open func stopAnimating(){
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.activityIndicatorContainer.alpha = 0
+            self.activityIndicator.alpha = 0
         }) { (finished) in
             self.activityIndicator.stopAnimating()
             self.isUserInteractionEnabled = true
