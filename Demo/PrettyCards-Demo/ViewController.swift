@@ -24,25 +24,20 @@ class ViewController: UIViewController {
     func configureUI(){
         
         // Configure top card
-        self.topCard.cornerRadius = 12
+        self.topCard.cornerRadius = 16
         self.topCard.animation = .zoomOut
         self.topCard.setShadow(.medium)
         
         // Configure button
-        self.button.animation = .fade
+        self.button.animation = .highlight
         self.button.cornerRadius = 8
         self.button.tapHandler = self.openGithubPage
         
     }
     
     func openGithubPage(){
-        self.button.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
-            guard let url = URL(string: "https://github.com/ilia3546/PrettyCards") else { return }
-            UIApplication.shared.open(url, options: [:], completionHandler: { _ in
-                self.button.stopAnimating()
-            })
-        })
+        guard let url = URL(string: "https://github.com/ilia3546/PrettyCards") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
 }

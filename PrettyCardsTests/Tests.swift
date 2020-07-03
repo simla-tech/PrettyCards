@@ -11,13 +11,6 @@ import XCTest
 
 class CardsTests: XCTestCase {
 
-    func testActivityIndicatorOffset() {
-        let card = Card(frame: .zero)
-        let offset = CGPoint(x: 5, y: 5)
-        card.activityIndicatorOffset = offset
-        XCTAssertEqual(card.activityIndicatorOffset, offset)
-    }
-    
     func testShadow(){
         let card = Card(frame: .zero)
         let shadow: Card.Shadow = .large
