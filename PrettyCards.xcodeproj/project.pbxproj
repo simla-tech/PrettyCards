@@ -12,6 +12,7 @@
 		F30E322B229D5E8500A60A11 /* PrettyCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30E3221229D5E8400A60A11 /* PrettyCards.framework */; };
 		F30E3240229D5EEC00A60A11 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323C229D5EEC00A60A11 /* Animation.swift */; };
 		F30E3241229D5EEC00A60A11 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323D229D5EEC00A60A11 /* Card.swift */; };
+		F30E3242229D5EEC00A60A11 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */; };
 		F30E3243229D5EEC00A60A11 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E323F229D5EEC00A60A11 /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		F30E322A229D5E8500A60A11 /* PrettyCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrettyCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30E323C229D5EEC00A60A11 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F30E323D229D5EEC00A60A11 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F30E323F229D5EEC00A60A11 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				F30E3225229D5E8400A60A11 /* Info.plist */,
 				F30E323C229D5EEC00A60A11 /* Animation.swift */,
 				F30E323D229D5EEC00A60A11 /* Card.swift */,
+				F30E323E229D5EEC00A60A11 /* ActivityIndicator.swift */,
 				F30E323F229D5EEC00A60A11 /* Shadow.swift */,
 			);
 			path = Source;
@@ -206,6 +209,7 @@
 			files = (
 				F30E3240229D5EEC00A60A11 /* Animation.swift in Sources */,
 				F30E3243229D5EEC00A60A11 /* Shadow.swift in Sources */,
+				F30E3242229D5EEC00A60A11 /* ActivityIndicator.swift in Sources */,
 				F30E3241229D5EEC00A60A11 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

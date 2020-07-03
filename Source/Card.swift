@@ -13,7 +13,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     public typealias TapHandler = () -> Void
     
-    // MARK: - Public variables
+    // MARK: - Variables
     
     /// Type of animation when tap
     open var animation: Animation?
@@ -72,14 +72,55 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         }
     }
     
+    public let containerView: UIView = .init()
+
+    /// Tap callback
     public var tapHandler: TapHandler?
-
-    // MARK: - Private variables
-
-    private let containerView: UIView = UIView()
+    
+    public var activityIndicator: (CardActivityIndicator & UIView) = UIActivityIndicatorView() {
+        didSet {
+            self.configureActivityIndicator()
+        }
+    }
+    
+    open override var backgroundColor: UIColor? {
+        set {
+            super.backgroundColor = newValue
+            self.activityIndicatorContainer.backgroundColor = newValue
+        }
+        get {
+            return super.backgroundColor
+        }
+    }
+    
     private var isTouched: Bool = false
-    private let recognizer: UITapGestureRecognizer = UITapGestureRecognizer()
-        
+    private let recognizer: UITapGestureRecognizer = .init()
+    
+    private var activityIndicatorContainer: UIView = .init()
+    private var activityIndicatorXOffset: NSLayoutConstraint?
+    private var activityIndicatorYOffset: NSLayoutConstraint?
+
+    public var activityIndicatorOffset: CGPoint {
+        get {
+            return .init(x: self.activityIndicatorXOffset?.constant ?? 0,
+                         y: self.activityIndicatorYOffset?.constant ?? 0)
+        }
+        set {
+            if let constraint = self.activityIndicatorXOffset {
+                self.activityIndicator.removeConstraint(constraint)
+                self.activityIndicatorContainer.removeConstraint(constraint)
+            }
+            if let constraint = self.activityIndicatorYOffset {
+                self.activityIndicator.removeConstraint(constraint)
+                self.activityIndicatorContainer.removeConstraint(constraint)
+            }
+            self.activityIndicatorXOffset = self.activityIndicator.centerXAnchor.constraint(equalTo: self.activityIndicatorContainer.centerXAnchor, constant: newValue.x)
+            self.activityIndicatorYOffset = self.activityIndicator.centerYAnchor.constraint(equalTo: self.activityIndicatorContainer.centerYAnchor, constant: newValue.y)
+            self.activityIndicatorXOffset?.isActive = true
+            self.activityIndicatorYOffset?.isActive = true
+        }
+    }
+    
     // MARK: - Overriding
     
     override public init(frame: CGRect) {
@@ -102,6 +143,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         self.configureRecognizer()
         self.configureContainer()
         self.moveSubviews()
+        self.configureActivityIndicator()
     }
     
     private func configureRecognizer(){
@@ -113,9 +155,8 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     private func configureContainer(){
         self.containerView.clipsToBounds = true
-        self.containerView.backgroundColor = .clear
         self.containerView.translatesAutoresizingMaskIntoConstraints = false
-        self.insertSubview(self.containerView, at: 0)
+        self.addSubview(self.containerView)
         
         NSLayoutConstraint.activate([
             .init(item: self.containerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
@@ -125,13 +166,36 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         ])
     }
     
-    open override func addSubview(_ view: UIView) {
-        self.containerView.addSubview(view)
+    private func configureActivityIndicator(){
+        
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.stopAnimating()
+        
+        self.activityIndicatorContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicatorContainer.backgroundColor = self.backgroundColor
+        self.activityIndicatorContainer.alpha = 0
+        self.activityIndicatorContainer.isUserInteractionEnabled = false
+        
+        self.activityIndicatorContainer.addSubview(self.activityIndicator)
+        self.containerView.addSubview(self.activityIndicatorContainer)
+        
+        NSLayoutConstraint.activate([
+            .init(item: self.activityIndicatorContainer, attribute: .bottom, relatedBy: .equal, toItem: self.containerView, attribute: .bottom, multiplier: 1, constant: 0),
+            .init(item: self.activityIndicatorContainer, attribute: .top, relatedBy: .equal, toItem: self.containerView, attribute: .top, multiplier: 1, constant: 0),
+            .init(item: self.activityIndicatorContainer, attribute: .leading, relatedBy: .equal, toItem: self.containerView, attribute: .leading, multiplier: 1, constant: 0),
+            .init(item: self.activityIndicatorContainer, attribute: .trailing, relatedBy: .equal, toItem: self.containerView, attribute: .trailing, multiplier: 1, constant: 0),
+        ])
+        
+        self.activityIndicator.widthAnchor.constraint(equalToConstant: self.activityIndicator.frame.width).isActive = true
+        self.activityIndicator.heightAnchor.constraint(equalToConstant: self.activityIndicator.frame.height).isActive = true
+        
+        self.activityIndicatorOffset = .init(x: 0, y: 0)
+        
     }
     
     private func moveSubviews(){
         self.subviews
-            .filter({ $0 != self.containerView })
+            .filter({ $0 != self.containerView && $0 != self.activityIndicatorContainer })
             .forEach(self.containerView.addSubview)
     }
     
@@ -164,6 +228,32 @@ open class Card: UIView, UIGestureRecognizerDelegate {
             self.isTouched.toggle()
             animation.animationBlock(self, true)
         }
+    }
+    
+    // MARK: - Activity indicator
+    
+    open func startAnimating(){
+        self.isUserInteractionEnabled = false
+        self.activityIndicator.startAnimating()
+        self.containerView.bringSubviewToFront(self.activityIndicatorContainer)
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+            self.activityIndicatorContainer.alpha = 1
+            self.activityIndicator.alpha = 1
+        })
+    }
+    
+    open func stopAnimating(){
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+            self.activityIndicatorContainer.alpha = 0
+            self.activityIndicator.alpha = 0
+        }) { (finished) in
+            self.activityIndicator.stopAnimating()
+            self.isUserInteractionEnabled = true
+        }
+    }
+    
+    public var isAnimating: Bool {
+        return self.activityIndicator.isAnimating
     }
     
 }
