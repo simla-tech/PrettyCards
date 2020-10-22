@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PrettyCards'
-  s.version          = '1.0.0'
+  s.version          = '1.0.5'
   s.summary          = 'Powerfull tool for creating views like iOS 11 appstore cards or buttons.'
   s.homepage         = 'https://github.com/ilia3546/PrettyCards'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
