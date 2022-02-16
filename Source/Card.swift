@@ -134,17 +134,23 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     // MARK: - Animations
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let animation = self.animation else { return }
+        guard let animation = self.animation else {
+            super.touchesBegan(touches, with: event)
+            return
+        }
         self.isTouched = true
         animation.animationBlock(self, false)
+        super.touchesBegan(touches, with: event)
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resetAnimation(handler: self.tapHandler)
+        super.touchesEnded(touches, with: event)
     }
     
     override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resetAnimation(handler: nil)
+        super.touchesCancelled(touches, with: event)
     }
     
     private func resetAnimation(handler: Card.TapHandler?){
