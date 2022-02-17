@@ -134,11 +134,11 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     // MARK: - Animations
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.isTouched = true
         guard let animation = self.animation else {
             super.touchesBegan(touches, with: event)
             return
         }
-        self.isTouched = true
         animation.animationBlock(self, false)
         super.touchesBegan(touches, with: event)
     }
@@ -155,17 +155,22 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     private func resetAnimation(handler: Card.TapHandler?){
         
+        defer {
+            self.isTouched = false
+        }
+        
+        guard self.isTouched else { return }
+        
         guard let animation = self.animation else {
             handler?()
             return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: handler ?? {})
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: {
+            handler?()
+        })
+        animation.animationBlock(self, true)
         
-        if self.isTouched {
-            self.isTouched.toggle()
-            animation.animationBlock(self, true)
-        }
     }
 }
 
