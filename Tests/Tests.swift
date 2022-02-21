@@ -11,7 +11,7 @@ import XCTest
 
 class CardsTests: XCTestCase {
     
-    func testShadow(){
+    func testShadow() {
         let card = Card(frame: .zero)
         let shadow: Card.Shadow = .large
         card.setShadow(shadow)

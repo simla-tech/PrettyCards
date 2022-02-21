@@ -14,7 +14,7 @@ extension Card {
     public class Animation {
         
         /// Animation closure
-        public typealias Closure = ((_ card: Card, _ isReverced: Bool)->Void)
+        public typealias Closure = ((_ card: Card, _ isReverced: Bool) -> Void)
 
         internal var animationBlock: Closure
         
@@ -30,7 +30,6 @@ extension Card {
 
 extension Card.Animation {
 
-    
     /// Zoom animation for Card
     ///
     /// - Parameters:
@@ -40,9 +39,9 @@ extension Card.Animation {
     ///   - velocity: The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment. Default is **1.5**.
     /// - Returns: Animation object
     public static func zoom(to scale: CGFloat,
-                     duration: TimeInterval = 0.35,
-                     damping: CGFloat = 1,
-                     velocity: CGFloat = 1.5) -> Card.Animation {
+                            duration: TimeInterval = 0.35,
+                            damping: CGFloat = 1,
+                            velocity: CGFloat = 1.5) -> Card.Animation {
         
         return Card.Animation({ (card, isReverced) in
             UIView.animate(withDuration: duration,
@@ -59,7 +58,6 @@ extension Card.Animation {
         
     }
     
-    
     /// Fade animation for Card
     ///
     /// - Parameters:
@@ -73,7 +71,6 @@ extension Card.Animation {
             })
         })
     }
-    
     
     /// Make custom Animation
     ///
@@ -90,6 +87,6 @@ extension Card.Animation {
     public static var zoomOut: Card.Animation { return .zoom(to: 0.95) }
     
     /// Fade out Card to 0.7 alpha
-    public static var highlight: Card.Animation{ return .fade(to: 0.7) }
+    public static var highlight: Card.Animation { return .fade(to: 0.7) }
     
 }

@@ -20,55 +20,55 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     /// The blur radius (in points) used to render the Card’s shadow. Animatable.
     open var shadowRadius: CGFloat {
-        set {
-            self.layer.shadowRadius = newValue
-        }
         get {
             return self.layer.shadowRadius
+        }
+        set {
+            self.layer.shadowRadius = newValue
         }
     }
     
     /// The color of the Card’s shadow. Animatable.
     open var shadowColor: UIColor? {
-        set {
-            self.layer.shadowColor = newValue?.cgColor
-        }
         get {
             if let shadowColor = self.layer.shadowColor {
                 return UIColor(cgColor: shadowColor)
             }
             return nil
         }
+        set {
+            self.layer.shadowColor = newValue?.cgColor
+        }
     }
     
     /// The offset (in points) of the Card’s shadow. Animatable.
     open var shadowOffset: CGSize {
-        set {
-            self.layer.shadowOffset = newValue
-        }
         get {
             return self.layer.shadowOffset
+        }
+        set {
+            self.layer.shadowOffset = newValue
         }
     }
     
     /// The opacity of the Card’s shadow. Animatable.
     open var shadowOpacity: Float {
-        set {
-            self.layer.shadowOpacity = newValue
-        }
         get {
             return self.layer.shadowOpacity
+        }
+        set {
+            self.layer.shadowOpacity = newValue
         }
     }
     
     /// The radius to use when drawing rounded corners for the layer’s background.
     open var cornerRadius: CGFloat {
-        set{
+        get {
+            return self.layer.cornerRadius
+        }
+        set {
             self.layer.cornerRadius = newValue
             self.containerView.layer.cornerRadius = newValue
-        }
-        get{
-            return self.layer.cornerRadius
         }
     }
     
@@ -94,7 +94,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     
     // MARK: - Configurations
     
-    private func configure(){
+    private func configure() {
         self.layer.masksToBounds = false
         self.clipsToBounds = false
         self.isExclusiveTouch = true
@@ -104,14 +104,14 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         self.moveSubviews()
     }
     
-    private func configureRecognizer(){
+    private func configureRecognizer() {
         self.recognizer.delaysTouchesBegan = false
         self.recognizer.delegate = self
         self.recognizer.cancelsTouchesInView = false
         self.addGestureRecognizer(self.recognizer)
     }
     
-    private func configureContainer(){
+    private func configureContainer() {
         self.containerView.clipsToBounds = true
         self.containerView.backgroundColor = .clear
         self.containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -121,11 +121,11 @@ open class Card: UIView, UIGestureRecognizerDelegate {
             .init(item: self.containerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
             .init(item: self.containerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
             .init(item: self.containerView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0),
-            .init(item: self.containerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0),
+            .init(item: self.containerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         ])
     }
     
-    private func moveSubviews(){
+    private func moveSubviews() {
         self.subviews
             .filter({ $0 != self.containerView })
             .forEach(self.containerView.addSubview)
@@ -143,6 +143,13 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         super.touchesBegan(touches, with: event)
     }
     
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if let touch = touches.first, !self.containerView.frame.contains(touch.location(in: self.containerView)) {
+            self.resetAnimation(handler: nil)
+        }
+    }
+    
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resetAnimation(handler: self.tapHandler)
         super.touchesEnded(touches, with: event)
@@ -153,7 +160,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         super.touchesCancelled(touches, with: event)
     }
     
-    private func resetAnimation(handler: Card.TapHandler?){
+    private func resetAnimation(handler: Card.TapHandler?) {
         
         defer {
             self.isTouched = false
@@ -173,4 +180,3 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         
     }
 }
-

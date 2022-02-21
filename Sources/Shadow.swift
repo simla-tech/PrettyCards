@@ -54,21 +54,21 @@ extension Card {
         
     }
     
-    public func setShadow(_ shadow: Card.Shadow){
+    public func setShadow(_ shadow: Card.Shadow) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
         self.shadowOpacity = shadow.opacity
     }
     
-    public func setShadow<T: CardShadowProtocol>(_ shadow: T){
+    public func setShadow<T: CardShadowProtocol>(_ shadow: T) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
         self.shadowOpacity = shadow.opacity
     }
     
-    public func setShadow(_ shadow: CardShadowProtocol){
+    public func setShadow(_ shadow: CardShadowProtocol) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
