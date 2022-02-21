@@ -10,7 +10,7 @@ import XCTest
 @testable import PrettyCards
 
 class CardsTests: XCTestCase {
-    
+
     func testShadow() {
         let card = Card(frame: .zero)
         let shadow: Card.Shadow = .large
@@ -20,5 +20,5 @@ class CardsTests: XCTestCase {
         XCTAssertEqual(card.shadowRadius, shadow.radius)
         XCTAssertEqual(card.shadowOpacity, shadow.opacity)
     }
-    
+
 }

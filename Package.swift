@@ -22,7 +22,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
 import PackageDescription
 
 let package = Package(
@@ -31,7 +30,7 @@ let package = Package(
         .iOS(.v11)
     ],
     products: [
-        .library(name: "PrettyCards", targets: ["PrettyCards"]),
+        .library(name: "PrettyCards", targets: ["PrettyCards"])
     ],
     targets: [
         .target(name: "PrettyCards", path: "Source")

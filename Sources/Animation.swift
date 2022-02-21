@@ -9,21 +9,21 @@
 import UIKit
 
 extension Card {
-    
+
     /// Card animation
     public class Animation {
-        
+
         /// Animation closure
         public typealias Closure = ((_ card: Card, _ isReverced: Bool) -> Void)
 
         internal var animationBlock: Closure
-        
+
         fileprivate init(_ animationBlock: @escaping Closure) {
             self.animationBlock = animationBlock
         }
-        
+
     }
-    
+
 }
 
 // MARK: - Default animations
@@ -42,7 +42,7 @@ extension Card.Animation {
                             duration: TimeInterval = 0.35,
                             damping: CGFloat = 1,
                             velocity: CGFloat = 1.5) -> Card.Animation {
-        
+
         return Card.Animation({ (card, isReverced) in
             UIView.animate(withDuration: duration,
                            delay: isReverced ? 0.1 : 0,
@@ -55,9 +55,9 @@ extension Card.Animation {
                                 .init(scaleX: scale, y: scale)
             })
         })
-        
+
     }
-    
+
     /// Fade animation for Card
     ///
     /// - Parameters:
@@ -71,7 +71,7 @@ extension Card.Animation {
             })
         })
     }
-    
+
     /// Make custom Animation
     ///
     /// - Parameter animationBlock: Custom animation closure
@@ -79,14 +79,14 @@ extension Card.Animation {
     public static func custom(_ animationBlock: @escaping Card.Animation.Closure) -> Card.Animation {
         return .init(animationBlock)
     }
-    
+
     /// Zoom in Card to 1.05 scale
     public static var zoomIn: Card.Animation { return .zoom(to: 1.05) }
-    
+
     /// Zoom out Card to 0.95 scale
     public static var zoomOut: Card.Animation { return .zoom(to: 0.95) }
-    
+
     /// Fade out Card to 0.7 alpha
     public static var highlight: Card.Animation { return .fade(to: 0.7) }
-    
+
 }
