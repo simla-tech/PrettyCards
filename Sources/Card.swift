@@ -96,6 +96,8 @@ open class Card: UIView, UIGestureRecognizerDelegate {
 
     private func configure() {
         self.layer.masksToBounds = false
+        self.layer.cornerCurve = .continuous
+        self.containerView.layer.cornerCurve = .continuous
         self.clipsToBounds = false
         self.isExclusiveTouch = true
         self.isUserInteractionEnabled = true
