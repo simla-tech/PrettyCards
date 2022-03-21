@@ -33,7 +33,7 @@ let package = Package(
         .library(name: "PrettyCards", targets: ["PrettyCards"])
     ],
     targets: [
-        .target(name: "PrettyCards", path: "Source")
+        .target(name: "PrettyCards", path: "Sources")
     ],
     swiftLanguageVersions: [
         .v5
