@@ -76,6 +76,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
 
     /// Tap callback
     public var tapHandler: TapHandler?
+    public var forwardTouchesToSuperview: Bool = true
 
     private var isTouched: Bool = false
     private let recognizer: UITapGestureRecognizer = .init()
@@ -144,7 +145,9 @@ open class Card: UIView, UIGestureRecognizerDelegate {
             return
         }
         animation.animationBlock(self, false)
-        super.touchesBegan(touches, with: event)
+        if self.forwardTouchesToSuperview {
+            super.touchesBegan(touches, with: event)
+        }
     }
 
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
