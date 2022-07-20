@@ -3,7 +3,7 @@ import ProjectDescriptionHelpers
 
 let project = Project(
     name: .PrettyCards,
-    additionalBaseSettings: SettingsDictionary().allowAppExtentionAPIOnly(true),
+    additionalBaseSettings: SettingsDictionary().allowAppExtensionAPIOnly(true),
     targets: [
         Target(
             name: .PrettyCards
