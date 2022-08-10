@@ -142,11 +142,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.isTouched = true
         self.tapBeginHandler?()
-        guard let animation = self.animation else {
-            super.touchesBegan(touches, with: event)
-            return
-        }
-        animation.animationBlock(self, false)
+        self.animation?.animationBlock(self, false)
         if self.forwardTouchesToSuperview {
             super.touchesBegan(touches, with: event)
         }
