@@ -15,9 +15,9 @@ public protocol CardShadowProtocol {
     var color: UIColor? { get }
 }
 
-extension Card {
+public extension Card {
 
-    public enum Shadow: CardShadowProtocol {
+    enum Shadow: CardShadowProtocol {
 
         case soft
         case large
@@ -34,7 +34,8 @@ extension Card {
         public var radius: CGFloat {
             switch self {
             case .large: return 32
-            case .medium, .soft: return 16
+            case .medium,
+                 .soft: return 16
             case .small: return 2
             }
         }
@@ -43,7 +44,8 @@ extension Card {
             switch self {
             case .small:
                 return CGSize(width: 0, height: 2)
-            case .medium, .soft:
+            case .medium,
+                 .soft:
                 return CGSize(width: 0, height: 8)
             case .large:
                 return CGSize(width: 0, height: 16)
@@ -51,26 +53,26 @@ extension Card {
         }
 
         public var color: UIColor? {
-            return UIColor(red: 30/255, green: 34/255, blue: 72/255, alpha: 1)
+            UIColor(red: 30 / 255, green: 34 / 255, blue: 72 / 255, alpha: 1)
         }
 
     }
 
-    public func setShadow(_ shadow: Card.Shadow) {
+    func setShadow(_ shadow: Card.Shadow) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
         self.shadowOpacity = shadow.opacity
     }
 
-    public func setShadow<T: CardShadowProtocol>(_ shadow: T) {
+    func setShadow<T: CardShadowProtocol>(_ shadow: T) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius
         self.shadowOpacity = shadow.opacity
     }
 
-    public func setShadow(_ shadow: CardShadowProtocol) {
+    func setShadow(_ shadow: CardShadowProtocol) {
         self.shadowColor = shadow.color
         self.shadowOffset = shadow.offset
         self.shadowRadius = shadow.radius

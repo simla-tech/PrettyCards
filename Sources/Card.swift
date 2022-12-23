@@ -21,7 +21,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     /// The blur radius (in points) used to render the Card’s shadow. Animatable.
     open var shadowRadius: CGFloat {
         get {
-            return self.layer.shadowRadius
+            self.layer.shadowRadius
         }
         set {
             self.layer.shadowRadius = newValue
@@ -44,7 +44,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     /// The offset (in points) of the Card’s shadow. Animatable.
     open var shadowOffset: CGSize {
         get {
-            return self.layer.shadowOffset
+            self.layer.shadowOffset
         }
         set {
             self.layer.shadowOffset = newValue
@@ -54,7 +54,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     /// The opacity of the Card’s shadow. Animatable.
     open var shadowOpacity: Float {
         get {
-            return self.layer.shadowOpacity
+            self.layer.shadowOpacity
         }
         set {
             self.layer.shadowOpacity = newValue
@@ -64,7 +64,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     /// The radius to use when drawing rounded corners for the layer’s background.
     open var cornerRadius: CGFloat {
         get {
-            return self.layer.cornerRadius
+            self.layer.cornerRadius
         }
         set {
             self.layer.cornerRadius = newValue
@@ -77,9 +77,9 @@ open class Card: UIView, UIGestureRecognizerDelegate {
     /// Tap callback
     public var tapHandler: TapHandler?
     public var tapBeginHandler: TapHandler?
-    public var forwardTouchesToSuperview: Bool = true
+    public var forwardTouchesToSuperview = true
 
-    private var isTouched: Bool = false
+    private var isTouched = false
     private let recognizer = UITapGestureRecognizer()
 
     // MARK: - Overriding
@@ -89,7 +89,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         self.configure()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configure()
     }
@@ -124,10 +124,34 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         self.addSubview(self.containerView)
 
         NSLayoutConstraint.activate([
-            .init(item: self.containerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+            .init(
+                item: self.containerView,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: self,
+                attribute: .bottom,
+                multiplier: 1,
+                constant: 0
+            ),
             .init(item: self.containerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
-            .init(item: self.containerView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0),
-            .init(item: self.containerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+            .init(
+                item: self.containerView,
+                attribute: .leading,
+                relatedBy: .equal,
+                toItem: self,
+                attribute: .leading,
+                multiplier: 1,
+                constant: 0
+            ),
+            .init(
+                item: self.containerView,
+                attribute: .trailing,
+                relatedBy: .equal,
+                toItem: self,
+                attribute: .trailing,
+                multiplier: 1,
+                constant: 0
+            )
         ])
     }
 
@@ -148,7 +172,7 @@ open class Card: UIView, UIGestureRecognizerDelegate {
         }
     }
 
-    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         if let touch = touches.first, !self.containerView.frame.contains(touch.location(in: self.containerView)) {
             self.resetAnimation(handler: nil)

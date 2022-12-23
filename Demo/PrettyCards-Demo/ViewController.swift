@@ -6,8 +6,8 @@
 //  Copyright © 2019 Ilya Kharlamov. All rights reserved.
 //
 
-import UIKit
 import PrettyCards
+import UIKit
 
 class ViewController: UIViewController {
 
