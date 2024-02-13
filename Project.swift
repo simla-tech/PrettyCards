@@ -5,10 +5,10 @@ let project = Project(
     name: .PrettyCards,
     additionalBaseSettings: SettingsDictionary().allowAppExtensionAPIOnly(true),
     targets: [
-        Target(
+        .target(
             name: .PrettyCards
         ),
-        Target(
+        .target(
             name: .PrettyCardsTests,
             product: .unitTests,
             sources: .defaultTestsPath,
