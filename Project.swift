@@ -11,7 +11,7 @@ let project = Project(
         .target(
             name: .PrettyCardsTests,
             product: .unitTests,
-            sources: .defaultTestsPath,
+            sources: .tests,
             dependencies: [.target(name: .PrettyCards)]
         )
     ],
