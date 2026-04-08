@@ -15,5 +15,5 @@ let project = Project(
             dependencies: [.target(name: .PrettyCards)]
         )
     ],
-    additionalFiles: ["README.MD", "Package.swift", "PrettyCards.podspec"]
+    additionalFiles: ["README.md", "Package.swift", "PrettyCards.podspec"]
 )
